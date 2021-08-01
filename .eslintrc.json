@@ -1,0 +1,37 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-typescript/base",
+    "prettier"
+  ],
+  "ignorePatterns": ["*.js"],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "max-len": ["error", 120],
+    "comma-dangle": ["error", "always-multiline"],
+    "quotes": ["error", "single"],
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-unused-vars": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.spec.ts"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
+}
